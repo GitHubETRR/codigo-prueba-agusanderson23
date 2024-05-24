@@ -1,11 +1,14 @@
 #include <stdio.h>
 const int preciopapaporkg= 790;
 int main(){
-    int kgdepapa;
-    int preciodepapafinal;
-    printf("Ingrese la cantidad en kg de papa que desea comprar\n");
-    scanf("%d", &kgdepapa);
-    preciodepapafinal = kgdepapa*preciopapaporkg;
-    printf("El precio de su compra de %dkg de papa es %d pesos", kgdepapa, preciodepapafinal);
+    int kgmercaderia;
+    int preciofinal;
+    int preciomercaderiaporkg;
+    printf("Ingrese la cantidad en kg de mercaderia que desea comprar\n");
+    scanf("%d", &kgmercaderia);
+    printf("Ingrese el precio por kg de la mercaderia que desea comprar\n");
+    scanf("%d", &preciomercaderiaporkg);
+    preciofinal = kgmercaderia*preciomercaderiaporkg;
+    printf("El precio de su compra de %dkg de mercaderia es %d", kgmercaderia, preciofinal);
     return 0;
 }
