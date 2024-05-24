@@ -1,0 +1,11 @@
+#include <stdio.h>
+const int añoadia = 365;
+int main(){
+    int año;
+    int diasvividos;
+    printf("Ingrese sus años de edad\n");
+    scanf("%d", &año);
+    diasvividos = año*añoadia;
+    printf("Su edad en años %d equivale a %d dias", año, diasvividos);
+    return 0;
+}
