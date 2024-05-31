@@ -11,7 +11,7 @@ int main(){
         scanf("%d",&angulointerno2);
     }
     while(!(angulointerno1+angulointerno2<180));
-        angulointerno3 = angulointerno-angulointerno1-angulointerno2;
-        printf("el angulo restante de su triangulo es de %d grados", angulointerno3);
+    angulointerno3 = angulointerno-angulointerno1-angulointerno2;
+    printf("el angulo restante de su triangulo es de %d grados", angulointerno3);
     return 0;
 }

@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main(){
+    float lado 1;
+    float lado 2;
+    float lado 3;
+    float lado 4;
+    printf("Ingrese el valor  en cm de los lados del rectangulo \n");
+    scanf("%f", &centimetro);
+    pie = centimetro/cmapie;
+    pulgada = centimetro/cmapulgada;
+    printf("El valor %fcm en pies es %f \n", centimetro, pie);
+    printf("El valor %fcm en pulgadas es %f \n", centimetro, pulgada);
+    return 0;
+}
