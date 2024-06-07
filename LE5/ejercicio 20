@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main(){
+    int tiempo;
+    do{
+       printf("Ingrese el tiempo en segundos \n");
+       scanf("%d", &tiempo);
+    }
+    while((tiempo>86400));
+    return 0;
+}
