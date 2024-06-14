@@ -1,10 +1,14 @@
 #include <stdio.h>
 int main(){
-    int tiempo;
+    int tiempototal,tiemposegundos,tiempominutos,tiempohoras;
     do{
-       printf("Ingrese el tiempo en segundos \n");
-       scanf("%d", &tiempo);
+       printf("Ingrese un tiempo en segundos menor a 86400 \n");
+       scanf("%d", &tiempototal);
     }
-    while((tiempo>86400));
+    while((tiempototal>86400));
+    tiempohoras=tiempototal/3600;
+    tiempominutos=(tiempototal-tiempohoras*3600)/60;
+    tiemposegundos=tiempototal-tiempohoras*3600-tiempominutos*60;
+    printf("Esa cantidad de segundos es equivalente a %d horas %d  minutos %d segundos",tiempohoras, tiempominutos, tiemposegundos);
     return 0;
 }
