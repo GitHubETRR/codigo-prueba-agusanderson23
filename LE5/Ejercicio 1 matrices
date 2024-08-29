@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N 5 // Tamaño de la matriz
+#define N 5 
 
 int main() {
     int matriz[N][N];
@@ -10,18 +10,14 @@ int main() {
     int filamax = 0;
     int colmax = 0;
 
-    // Inicializar el generador de números aleatorios
     srand(time(NULL));
-
-    // Llenar la matriz con valores aleatorios entre 1 y 30
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
-            matriz[i][j] = rand() % 30 + 1; // Generar número aleatorio entre 1 y 30
-            printf("%2d ", matriz[i][j]);  // Imprimir el número generado
+            matriz[i][j] = rand() % 30 + 1; 
+            printf("%2d ", matriz[i][j]);  
         }printf("\n");
     }
 
-    // Encontrar el valor máximo y su ubicación
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             if (matriz[i][j] > valormax) {
@@ -32,7 +28,6 @@ int main() {
         }
     }
 
-    // Informar el valor máximo y su ubicación
     printf("\nEl valor máximo es %d y se encuentra en la fila %d, columna %d.\n", valormax, filamax + 1, colmax + 1);
 
     return 0;
