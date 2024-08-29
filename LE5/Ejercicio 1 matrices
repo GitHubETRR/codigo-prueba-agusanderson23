@@ -18,7 +18,7 @@ int main() {
         for (int j = 0; j < N; j++) {
             matriz[i][j] = rand() % 30 + 1; // Generar número aleatorio entre 1 y 30
             printf("%2d ", matriz[i][j]);  // Imprimir el número generado
-        }
+        }printf("\n");
     }
 
     // Encontrar el valor máximo y su ubicación
