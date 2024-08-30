@@ -4,7 +4,7 @@
 
 #define N 5 
 
-{
+int main(){
     int matriz[N][N];
     int valormax = 0;
     int filamax = 0;
