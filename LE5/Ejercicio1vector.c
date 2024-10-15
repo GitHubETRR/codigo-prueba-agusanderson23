@@ -7,8 +7,6 @@ int main() {
     int i;
     Recibir_Numeros(i, vector);
     Devolver_Numeros(i, vector);
-
-    
     return 0;
 }
 void Recibir_Numeros(int i, int vector[5]){
