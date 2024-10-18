@@ -2,47 +2,67 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdbool.h>
-
+#include <math.h>
 #define N 10 
 
- int main(){
-    int matriz[N][N];
-    srand(time(NULL));
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            matriz[i][j] = rand() % 100 + 1; 
-            printf("%3d ", matriz[i][j]);  
-            bool esPrimo=es_primo(matriz[i][j]);
-        }printf("\n");
-    }
+bool Es_Primo(int num);
+void Matriz(int matriz[N][N]);
+void Guardar_Primos(int matriz[N][N], int primos[], int *ContadorPrimos);
+void Mostrar_Primos(int primos[], int ContadorPrimos);
+
+int main() {
+    int matriz[N][N];       
+    int primos[N*N];        
+    int ContadorPrimos = 0;  
+
+    Matriz(matriz);
+
+    Guardar_Primos(matriz, primos, &ContadorPrimos);
+
+    Mostrar_Primos(primos, ContadorPrimos);
+
     return 0;
 }
 
-bool es_primo(int num)
-{
-    bool esPrimo;
-    int raiz, cont=0;
-    float a,b;
-    raiz=sqrt(num);
-    do
-    {
-        a=num/raiz;
-        b=(float)num/raiz;
-        raiz--;
-        cont++;
+bool Es_Primo(int num) {
+    if (num < 2) {
+        return false;
     }
-    while (a!=b);
-    raiz=sqrt(num);
-    if(num==1){ 
-        esPrimo=false;
-    }
-    else{
-        if(cont<raiz-1){
-            esPrimo=false;
-        }
-        else{
-            esPrimo=true;
+    for (int i = 2; i <= sqrt(num); i++) {
+        if (num % i == 0) {
+            return false;
         }
     }
-    return esPrimo;
+    return true;
+}
+
+void Matriz(int matriz[N][N]) {
+    srand(time(NULL));  
+    printf("Matriz generada:\n");
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            matriz[i][j] = rand() % 100 + 1; 
+            printf("%3d ", matriz[i][j]);    
+        }
+        printf("\n");
+    }
+}
+
+void Guardar_Primos(int matriz[N][N], int primos[], int *ContadorPrimos) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            if (Es_Primo(matriz[i][j])) {
+                primos[*ContadorPrimos] = matriz[i][j];
+                (*ContadorPrimos)++;                     
+            }
+        }
+    }
+}
+
+void Mostrar_Primos(int primos[], int ContadorPrimos) {
+    printf("\nNúmeros primos encontrados:\n");
+    for (int i = 0; i < ContadorPrimos; i++) {
+        printf("%d ", primos[i]);
+    }
+    printf("\n");
 }
