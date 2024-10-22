@@ -7,7 +7,7 @@
 
 bool Es_Primo(int num);
 void Matriz(int matriz[N][N]);
-void Guardar_Primos(int matriz[N][N], int primos[], int *ContadorPrimos);
+void Guardar_Primos(int matriz[N][N], int primos[], int ContadorPrimos);
 void Mostrar_Primos(int primos[], int ContadorPrimos);
 
 int main() {
@@ -17,7 +17,7 @@ int main() {
 
     Matriz(matriz);
 
-    Guardar_Primos(matriz, primos, &ContadorPrimos);
+    Guardar_Primos(matriz, primos, ContadorPrimos);
 
     Mostrar_Primos(primos, ContadorPrimos);
 
@@ -48,12 +48,12 @@ void Matriz(int matriz[N][N]) {
     }
 }
 
-void Guardar_Primos(int matriz[N][N], int primos[], int *ContadorPrimos) {
+void Guardar_Primos(int matriz[N][N], int primos[], int ContadorPrimos) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             if (Es_Primo(matriz[i][j])) {
-                primos[*ContadorPrimos] = matriz[i][j];
-                (*ContadorPrimos)++;                     
+                primos[ContadorPrimos] = matriz[i][j];
+                (ContadorPrimos)++;                     
             }
         }
     }
