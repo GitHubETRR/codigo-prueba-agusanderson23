@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <ctype.h> 
 
 struct Alumno {
     char Nombre[20];
@@ -7,6 +6,7 @@ struct Alumno {
     char TragoFav[30];
     int Internas;
     int Quebradas;
+    int Vasos;  
 };
 
 int leerNumero() {
@@ -29,6 +29,8 @@ void datosAlumno(struct Alumno* alumno) {
     alumno->Internas = leerNumero();  
     printf("¿Cantidad de quebradas?\n");
     alumno->Quebradas = leerNumero();  
+    printf("¿Cantidad de vasos tomados?\n");
+    alumno->Vasos = leerNumero();  
 }
 
 void mostrarAlumno(struct Alumno alumno) {
@@ -37,6 +39,14 @@ void mostrarAlumno(struct Alumno alumno) {
     printf("Trago favorito: %s\n", alumno.TragoFav);
     printf("Internas: %d\n", alumno.Internas);
     printf("Total de quebradas: %d\n", alumno.Quebradas);
+    printf("Cantidad de vasos tomados: %d\n", alumno.Vasos);
+
+    if (alumno.Quebradas > 0) {
+        double promedio = (double)alumno.Vasos / alumno.Quebradas;
+        printf("Promedio de vasos por quebrada: %.2f\n", promedio);
+    } else {
+        printf("No se ingresaron quebradas, no se puede calcular el promedio.\n");
+    }
 }
 
 int main() {
